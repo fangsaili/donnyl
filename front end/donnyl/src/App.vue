@@ -1,11 +1,12 @@
 <!--
- * @Author: your name
- * @Date: 2021-09-01 16:40:24
- * @LastEditTime: 2021-09-02 18:25:50
+ * @Author: fangsai li
+ * @Date: 2021-09-03 11:35:28
+ * @LastEditTime: 2021-09-03 15:56:10
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /donnyl/src/App.vue
 -->
+
 <template>
 <div class="bg">
     <el-container>
@@ -44,7 +45,7 @@
                 <div class="d-downloadcv">
                     <button class="downloadcv">
                         <span class="down">
-                            
+
                         </span>
                         <span>Download CV</span>
                     </button>
@@ -54,13 +55,23 @@
 
         <!-- right area Menu and Main-->
         <el-container class="right-area">
-            <el-header>Header</el-header>
+            <!-- menu -->
+            <el-header>
+                <ul class="menulist">
+                    <li v-for="(item, i) in menulist" key="i" @click="menuclick(item,i)"><span>{{item.name}}</span></li>
+                    <li class="l-search"></li>
+                    <li class="l-menu"></li>
+                </ul>
+            </el-header>
             <el-main>
-                <div v-for="(item, i) in mainlist" key="item">
-                    MAIN{{ i }}
-                </div>
+                <router-view></router-view>
+                
             </el-main>
-            <el-footer>Footer</el-footer>
+            <el-footer>
+                <div>
+                    © 2021 <span style="color:#2196f3">Fangsai Li</span>. All rights reserved. Design by <span style="color:#ef5350">webstrot.</span>
+                </div>
+            </el-footer>
         </el-container>
     </el-container>
 </div>
@@ -76,14 +87,59 @@ export default {
     },
     data() {
         return {
-            mainlist: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+            menulist: [{
+                name: 'Home',
+                path: '/'
+            }, {
+                name: 'About',
+                path: '/index/about'
+            }, {
+                name: 'Skills',
+                path: '/index/skills'
+            }, {
+                name: 'Education',
+                path: '/index/education'
+            }, {
+                name: 'Portfolio',
+                path: '/index/portifio'
+            }, {
+                name: 'Testimonial',
+                path: '/index/testimonial'
+            }, {
+                name: 'Experience',
+                path: '/index/experience'
+            }, {
+                name: 'Blog',
+                path: '/index/blog'
+            }, {
+                name: 'Contact',
+                path: '/index/contact'
+            }, ]
         };
     },
-};
+    methods: {
+        menuclick(value,index) {
+            var lst = document.querySelector('.menulist');
+            var lis = lst.querySelectorAll('li');
+            for (var i = 0;i<11;i++) {
+                lis[i].style.backgroundColor = '';
+            }
+            
+            lis[index].style.backgroundColor = '#2196f3';
+            
+            console.log(lst);
+            console.log(index);
+            console.log(lis);
+            console.log(value);
+            this.$router.push(value.path);
+        }
+    },
+}
 </script>
 
 <style>
 @import url("assets/css/leftarea.css");
+@import url("assets/css/menu.css");
 @import url("views/css/nomalize.css");
 @import url("assets/font/merienda/Merienda.css");
 
@@ -98,12 +154,13 @@ export default {
 
 .el-header,
 .el-footer {
-    height: 100px;
+
+    padding: 0;
     margin: 2vw 2vw 2vw 0px;
     background-color: #222222;
     color: #ffffff;
     text-align: center;
-    line-height: 60px;
+
 }
 
 .el-aside {
@@ -122,7 +179,7 @@ export default {
     line-height: 160px;
     font: 900;
     font-size: 20px;
-    font-family: "Merienda";
+   
 }
 
 html {

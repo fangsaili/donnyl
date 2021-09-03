@@ -154,6 +154,7 @@
 }
 .d-downloadcv .downloadcv {
   position: relative;
+  width: 70%;
   background-color: #2196f3;
   border: none;
   color: white;
@@ -161,15 +162,36 @@
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 15px;
+}
+.d-downloadcv .downloadcv:hover {
+  background-color: dimgray;
+}
+.d-downloadcv .downloadcv:active {
+  top: 2px;
+}
+.d-downloadcv .downloadcv span {
+  display: inline-block;
+}
+@media only screen and (min-width: 1201px) {
+  .d-downloadcv .downloadcv span {
+    font-size: 12px;
+    transform: scale(1);
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .d-downloadcv .downloadcv span {
+    font-size: 12px;
+    transform: scale(0.7);
+  }
 }
 @media only screen and (max-width: 500px) {
-  .d-downloadcv .downloadcv {
-    font-size: 8px;
+  .d-downloadcv .downloadcv span {
+    font-size: 12px;
+    transform: scale(0.5);
   }
 }
 .d-downloadcv .downloadcv .down {
-  margin-right: 10px;
+  margin: 0 5px;
   vertical-align: middle;
   display: inline-block;
   height: 20px;
