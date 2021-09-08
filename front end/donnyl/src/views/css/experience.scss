@@ -1,0 +1,30 @@
+.experience {
+    padding: 2vh 2vw 0 4vw;
+    line-height: 50px;
+    .experience-title {
+        margin: 10px 0;
+        text-align: left;
+        line-height: 46px;
+        .experience-img {
+            display: inline-block;
+            height: 46px;
+            width: 46px;
+            vertical-align: middle;
+            background: url("../../assets/images/svg/experience.svg") no-repeat;
+        }
+        .experience-experience {
+            line-height: 1;
+            height: 34px;
+            font-size: 34px;
+            font-weight: 900;
+        }
+    }
+    .experience-title-content {
+        margin: 20px 0;
+        line-height: 20px;
+        width: 100%;
+        text-align: left;
+        font-size: 12px;
+        color: #797979;
+    }
+}

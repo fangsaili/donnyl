@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2021-09-03 11:36:32
- * @LastEditTime: 2021-09-08 17:30:53
+ * @LastEditTime: 2021-09-08 18:11:53
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /donnyl/src/views/index/Protifio.vue
@@ -207,7 +207,6 @@ export default {
             var divcontent = document.querySelector(".pt-contents");
             var divimg = divcontent.querySelectorAll("div");
             var w = divimg[0].clientWidth;
-            console.log(w);
             for (let index = 0; index < divimg.length; index++) {
                 divimg[index].style.height = w * 3 / 4 + "px";
 
