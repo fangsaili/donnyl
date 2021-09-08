@@ -1,7 +1,7 @@
 <!--
  * @Author: fangsai li
  * @Date: 2021-09-03 11:35:28
- * @LastEditTime: 2021-09-03 15:56:10
+ * @LastEditTime: 2021-09-08 11:44:18
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /donnyl/src/App.vue
@@ -43,7 +43,7 @@
                     </div>
                 </div>
                 <div class="d-downloadcv">
-                    <button class="downloadcv">
+                    <button class="downloadcv" @click="downloadcv()">
                         <span class="down">
 
                         </span>
@@ -65,7 +65,7 @@
             </el-header>
             <el-main>
                 <router-view></router-view>
-                
+
             </el-main>
             <el-footer>
                 <div>
@@ -102,31 +102,48 @@ export default {
             }, {
                 name: 'Portfolio',
                 path: '/index/portifio'
-            }, {
-                name: 'Testimonial',
-                path: '/index/testimonial'
-            }, {
+            },{
                 name: 'Experience',
                 path: '/index/experience'
-            }, {
-                name: 'Blog',
-                path: '/index/blog'
             }, {
                 name: 'Contact',
                 path: '/index/contact'
             }, ]
         };
     },
+    mounted() {
+        this.tohome();
+    },
     methods: {
-        menuclick(value,index) {
+        tohome() {
             var lst = document.querySelector('.menulist');
             var lis = lst.querySelectorAll('li');
-            for (var i = 0;i<11;i++) {
+
+            for (var i = 0; i < lis.length; i++) {
                 lis[i].style.backgroundColor = '';
+                lis[i].style.transform = 'scale(1)';
             }
-            
+            lis[0].style.backgroundColor = '#2196f3';
+            lis[0].style.transform = 'scale(1.2)';
+        },
+
+        downloadcv() {
+            let a = document.createElement('a')
+            a.href = "http://47.97.222.87:8088/file/download?fileName=李方赛的简历.docx"
+            a.click();
+
+        },
+
+        menuclick(value, index) {
+            var lst = document.querySelector('.menulist');
+            var lis = lst.querySelectorAll('li');
+            for (var i = 0; i < lis.length; i++) {
+                lis[i].style.backgroundColor = '';
+                lis[i].style.transform = 'scale(1)';
+            }
+
             lis[index].style.backgroundColor = '#2196f3';
-            
+            lis[index].style.transform = 'scale(1.2)';
             console.log(lst);
             console.log(index);
             console.log(lis);
@@ -179,7 +196,7 @@ export default {
     line-height: 160px;
     font: 900;
     font-size: 20px;
-   
+
 }
 
 html {

@@ -1,0 +1,30 @@
+.portfolio {
+  padding: 2vh 2vw 0 4vw;
+  line-height: 50px;
+}
+.portfolio .portfolio-title {
+  margin: 10px 0;
+  text-align: left;
+  line-height: 46px;
+}
+.portfolio .portfolio-title .portfolio-img {
+  display: inline-block;
+  height: 46px;
+  width: 46px;
+  vertical-align: middle;
+  background: url("../../assets/images/svg/portfolio.svg") no-repeat;
+}
+.portfolio .portfolio-title .portfolio-portfolio {
+  line-height: 1;
+  height: 34px;
+  font-size: 34px;
+  font-weight: 900;
+}
+.portfolio .portfolio-title-content {
+  margin: 20px 0;
+  line-height: 20px;
+  width: 100%;
+  text-align: left;
+  font-size: 12px;
+  color: #797979;
+}/*# sourceMappingURL=portfolio.css.map */
