@@ -1,7 +1,7 @@
 <!--
  * @Author: fangsai li
  * @Date: 2021-09-03 11:35:28
- * @LastEditTime: 2021-09-08 11:44:18
+ * @LastEditTime: 2021-09-09 14:24:06
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /donnyl/src/App.vue
@@ -69,7 +69,7 @@
             </el-main>
             <el-footer>
                 <div>
-                    © 2021 <span style="color:#2196f3">Fangsai Li</span>. All rights reserved. Design by <span style="color:#ef5350">webstrot.</span>
+                    © 2021 <span style="color:#2196f3">Fangsai Li</span>. All rights reserved. Design by <span style="color:#ef5350">webstrot.&nbsp  </span>/&nbsp&nbsp<a id="Icplink" @click="toIcp()">鄂ICP备2021015598号-1</a>
                 </div>
             </el-footer>
         </el-container>
@@ -115,6 +115,9 @@ export default {
         this.tohome();
     },
     methods: {
+        toIcp(){
+window.open("http://beian.miit.gov.cn/")
+        },
         tohome() {
             var lst = document.querySelector('.menulist');
             var lis = lst.querySelectorAll('li');
@@ -144,10 +147,6 @@ export default {
 
             lis[index].style.backgroundColor = '#2196f3';
             lis[index].style.transform = 'scale(1.2)';
-            console.log(lst);
-            console.log(index);
-            console.log(lis);
-            console.log(value);
             this.$router.push(value.path);
         }
     },
@@ -159,6 +158,13 @@ export default {
 @import url("assets/css/menu.css");
 @import url("views/css/nomalize.css");
 @import url("assets/font/merienda/Merienda.css");
+
+#Icplink{
+    font-size: 12px;
+}
+#Icplink:hover{
+    color: #797979;
+}
 
 .right-area {
     height: 100vh;

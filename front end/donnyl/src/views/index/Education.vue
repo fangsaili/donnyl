@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2021-09-03 11:36:01
- * @LastEditTime: 2021-09-08 11:38:06
+ * @LastEditTime: 2021-09-09 14:24:30
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /donnyl/src/views/index/Eduction.vue
@@ -22,8 +22,8 @@
                     <span></span>
                     <span>{{item.title}}</span>
                     <span>&nbsp-&nbsp{{item.position}}</span>
-                    <span  v-show="contents[i].show"></span>
-                    <span  v-show="!contents[i].show"></span>
+                    <span v-show="contents[i].show"></span>
+                    <span v-show="!contents[i].show"></span>
                 </div>
                 <div class="ed-ct-ct">
                     {{item.content}}
@@ -77,12 +77,9 @@ export default {
             if (!this.contents[index].show) {
                 ct[index].style = "max-height:1000px;padding: 30px 40px;"
 
-                console.log(1000)
-
             } else {
 
                 ct[index].style = "max-height:0;padding: 0"
-                console.log(0)
 
             }
             this.contents[index].show = !this.contents[index].show;

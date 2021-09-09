@@ -40,9 +40,10 @@
                 width: 80px;
                 line-height: 70px;
                 font-size: 14px;
+                transition: all 1s;
                 &:hover {
                     background-color: #2196f3;
-                    transform: scale(1.2);
+                    transform: scale(1.1);
                 }
             }
         }
