@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2021-09-03 11:37:45
- * @LastEditTime: 2021-09-09 18:44:59
+ * @LastEditTime: 2021-09-10 14:48:06
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /donnyl/src/views/index/Contact.vue
@@ -36,7 +36,7 @@
 
             </div>
             <div class="contact-me">
-                <div class="contact-me-title">HIRE ME{{form.name}}</div>
+                <div class="contact-me-title">HIRE ME</div>
                 <input v-model="form.name" type="text" placeholder="Your Name">
                 <input v-model="form.email" type="text" placeholder="Your Email">
                 <input v-model="form.subject" type="text" placeholder="Subject">
@@ -51,6 +51,9 @@
 
 <script>
 import axios from 'axios'
+import {
+    ElMessage
+} from 'element-plus'
 export default {
     data() {
         return {
@@ -70,17 +73,46 @@ export default {
 
         },
         submitform() {
+            if (this.form.question == "") {
+                return ElMessage.error({
+                    message: 'Not filling in the question',
 
-            axios.post(
-                'http://47.97.222.87:8088/contact/update', JSON.stringify(this.form), {
-                    headers: {
-                        'Content-Type': 'application/json'
-                    }
+                })
+
+                
+
+            }
+            if (this.form.question.length < 50) {
+
+                    console.log(this.form.question.length)
+                    return ElMessage.error({
+                        message: 'The question is too short, with at least 50 letters in length',
+
+                    })
+
                 }
 
+            axios.post(
+                '/contact/update', JSON.stringify(this.form)
+
             ).then((res) => {
+                if(res.data.success==true){
+                    ElMessage.success({
+                    message: 'Successfully sent,Thank you for your suggestion!',
+                    type: 'success',
+                })
+                }else{
+                    if(res.data.message=="timelimit"){
+                    ElMessage.error({
+                    message: 'A maximum of 10 messages are sent each day',
+                    type: 'error',
+                })
+                }
+                }
+                
                 console.log(res);
             }).catch((err) => {
+                ElMessage.error('Error,network error')
                 console.log(res);
             });
 

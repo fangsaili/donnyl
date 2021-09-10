@@ -1,7 +1,7 @@
 <!--
  * @Author: fangsai li
  * @Date: 2021-09-03 11:35:28
- * @LastEditTime: 2021-09-09 14:24:06
+ * @LastEditTime: 2021-09-10 16:45:50
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /donnyl/src/App.vue
@@ -69,7 +69,7 @@
             </el-main>
             <el-footer>
                 <div>
-                    © 2021 <span style="color:#2196f3">Fangsai Li</span>. All rights reserved. Design by <span style="color:#ef5350">webstrot.&nbsp  </span>/&nbsp&nbsp<a id="Icplink" @click="toIcp()">鄂ICP备2021015598号-1</a>
+                    © 2021 <span style="color:#2196f3">Fangsai Li</span>. All rights reserved. Design by <span style="color:#ef5350">webstrot.&nbsp </span>/&nbsp&nbsp<a id="Icplink" @click="toIcp()">鄂ICP备2021015598号-1</a>
                 </div>
             </el-footer>
         </el-container>
@@ -78,13 +78,8 @@
 </template>
 
 <script>
-import {
-    Download
-} from '@element-plus/icons'
+import axios from "axios"
 export default {
-    components: {
-        Download,
-    },
     data() {
         return {
             menulist: [{
@@ -102,7 +97,7 @@ export default {
             }, {
                 name: 'Portfolio',
                 path: '/index/portifio'
-            },{
+            }, {
                 name: 'Experience',
                 path: '/index/experience'
             }, {
@@ -113,10 +108,20 @@ export default {
     },
     mounted() {
         this.tohome();
+        axios.get(
+                '/watch/time',
+
+            ).then((res) => {
+                console.log(res);
+            }).catch((err) => {
+                console.log(res);
+            });
+
     },
+    
     methods: {
-        toIcp(){
-window.open("http://beian.miit.gov.cn/")
+        toIcp() {
+            window.open("http://beian.miit.gov.cn/")
         },
         tohome() {
             var lst = document.querySelector('.menulist');
@@ -159,10 +164,11 @@ window.open("http://beian.miit.gov.cn/")
 @import url("views/css/nomalize.css");
 @import url("assets/font/merienda/Merienda.css");
 
-#Icplink{
+#Icplink {
     font-size: 12px;
 }
-#Icplink:hover{
+
+#Icplink:hover {
     color: #797979;
 }
 

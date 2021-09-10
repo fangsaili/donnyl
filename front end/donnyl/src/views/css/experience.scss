@@ -1,6 +1,36 @@
 .experience {
     padding: 2vh 2vw 0 4vw;
     line-height: 50px;
+    @media screen and (max-width: 1650px) {
+        width: 1200px;
+        transform: scale(0.9);
+        transform-origin: 0 0;
+    }
+    @media screen and (max-width: 1440px) {
+        width: 1200px;
+        transform: scale(0.8);
+        transform-origin: 0 0;
+    }
+    @media screen and (max-width: 1310px) {
+        width: 1200px;
+        transform: scale(0.75);
+        transform-origin: 0 0;
+    }
+    @media screen and (max-width: 1210px) {
+        width: 1200px;
+        transform: scale(0.65);
+        transform-origin: 0 0;
+    }
+    @media screen and (max-width: 1070px) {
+        width: 1200px;
+        transform: scale(0.55);
+        transform-origin: 0 0;
+    }
+    @media screen and (max-width: 900px) {
+        width: 1200px;
+        transform: scale(0.48);
+        transform-origin: 0 0;
+    }
     .experience-title {
         margin: 10px 0;
         text-align: left;

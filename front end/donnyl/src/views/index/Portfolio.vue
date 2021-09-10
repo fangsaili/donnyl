@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2021-09-03 11:36:32
- * @LastEditTime: 2021-09-08 18:11:53
+ * @LastEditTime: 2021-09-10 16:48:14
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /donnyl/src/views/index/Protifio.vue
@@ -132,6 +132,13 @@ export default {
             ],
         }
     },
+   
+    beforeRouteLeave(to, from, next) {
+        window.removeEventListener("resize",this.computeh)
+        next();
+    },
+  
+    
     mounted() {
         window.addEventListener("resize", this.computeh);
         this.computeh();
@@ -207,7 +214,7 @@ export default {
             var divcontent = document.querySelector(".pt-contents");
             var divimg = divcontent.querySelectorAll("div");
             var w = divimg[0].clientWidth;
-            for (let index = 0; index < divimg.length; index++) {
+            for (let index = 0; index < divimg.length ; index++) {
                 divimg[index].style.height = w * 3 / 4 + "px";
 
             }
