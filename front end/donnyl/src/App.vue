@@ -1,7 +1,7 @@
 <!--
  * @Author: fangsai li
  * @Date: 2021-09-03 11:35:28
- * @LastEditTime: 2021-09-10 16:45:50
+ * @LastEditTime: 2021-09-13 15:15:08
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /donnyl/src/App.vue
@@ -17,8 +17,8 @@
                 <div class="d-name">
                     <div class="l-name">Fangsai Li</div>
                     <div class="sm-name">
-                        <span>UX/UI Designer </span>
-                        <span>in Dewas</span>
+                        <span>Undergraduate </span>
+                        <span>in KCL</span>
                     </div>
                 </div>
                 <div class="d-links">
@@ -27,8 +27,8 @@
                         <li></li>
                         <li></li>
                         <li></li>
-                        <li></li>
-                        <li></li>
+
+                        <li @click="opnelink()"></li>
                         <li></li>
                     </ul>
                 </div>
@@ -36,8 +36,8 @@
                     <div class="d-title">What’s in My Mind</div>
                     <div class="d-content">
                         We can develop and design anything beyond your ima gination. About
-                        our work, we don’t say anything bec ause our work speaks. For
-                        more, you can ask our clie nts and they will tell you how much
+                        our work, we don’t say anything because our work speaks. For
+                        more, you can ask our clients and they will tell you how much
                         satisfied they are with our services. So, what are you waiting
                         for?
                     </div>
@@ -109,17 +109,21 @@ export default {
     mounted() {
         this.tohome();
         axios.get(
-                '/watch/time',
+            '/watch/time',
 
-            ).then((res) => {
-                console.log(res);
-            }).catch((err) => {
-                console.log(res);
-            });
+        ).then((res) => {
+            console.log(res);
+        }).catch((err) => {
+            console.log(res);
+        });
 
     },
-    
+
     methods: {
+        opnelink(link) {
+            window.open("https://www.linkedin.com/in/%E6%96%B9%E8%B5%9B-%E6%9D%8E-569878204");
+
+        },
         toIcp() {
             window.open("http://beian.miit.gov.cn/")
         },

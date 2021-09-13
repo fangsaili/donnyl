@@ -29,7 +29,7 @@ public class WatchtimesController {
         Watchtimes watchtimes1 = watchtimesMapper.selectByPrimaryKey(httpRequest.getRemoteAddr());
         if(ObjectUtils.isEmpty(watchtimes1)){
             watchtimes.setId(httpRequest.getRemoteAddr());
-            watchtimes.setTimes(0);
+            watchtimes.setTimes(1);
             watchtimes.setContacttimes(0);
             watchtimes.setContactalltimes(0);
             watchtimesMapper.insert(watchtimes);

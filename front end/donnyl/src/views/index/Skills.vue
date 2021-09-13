@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2021-09-03 10:52:26
- * @LastEditTime: 2021-09-07 16:02:27
+ * @LastEditTime: 2021-09-13 11:10:40
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /donnyl/src/views/index/Skills.vue
@@ -34,6 +34,7 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
     data() {
         return {
@@ -73,18 +74,38 @@ export default {
 
         }
     },
+    beforeRouteLeave(to, from, next) {
+        window.removeEventListener("resize",this.changeWidth)
+        next();
+    },
+  
     mounted() {
+
+        
         this.changeWidth();
         window.addEventListener("resize", this.changeWidth);
 
-        for (let index = 0; index < this.skillp.length; index++) {
-            this.movechange(this.skillp[index].percentage, index)
-
-        }
+        this.getSkills();
 
     },
 
     methods: {
+        getSkills() {
+            axios.get(
+                '/skill/all',
+
+            ).then((res) => {
+                this.skillp = res.data.content;
+                for (let index = 0; index < this.skillp.length; index++) {
+                    this.movechange(this.skillp[index].percentage, index)
+
+                };
+                console.log(res);
+            }).catch((err) => {
+                console.log(res);
+            });
+
+        },
         movechange(percentage, index) {
             var that = this;
             var per = 0;

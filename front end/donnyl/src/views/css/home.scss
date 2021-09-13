@@ -73,6 +73,7 @@
                 }
             }
             .home-self-img {
+                position: relative;
                 display: flex;
                 height: 50%;
                 min-height: 250px;
@@ -81,29 +82,137 @@
                 border-left: 1px solid #2d2d2d;
                 align-items: center;
                 justify-content: center;
+                .message {
+                    position: absolute;
+                    left: calc(50% - 125px);
+                    top: calc(50% - 125px);
+                    height: 70px;
+                    width: 70px;
+                    border-radius: 35px;
+                    background: url('../../assets/images/svg/Chat.svg') no-repeat center center #ef5350;
+                }
                 .picture {
+                    overflow: hidden;
                     position: relative;
                     height: 250px;
                     width: 250px;
                     border-radius: 125px;
-                    // background-color: #171717;
-                    background: url('../../assets/images/png/图层\ 1.png') no-repeat center center #171717;
-                    background-size: 250px;
-                    .message {
+                    .box-pic {
                         position: absolute;
-                        left: 0;
-                        top: 0;
-                        height: 70px;
-                        width: 70px;
-                        border-radius: 35px;
-                        background: url('../../assets/images/svg/Chat.svg') no-repeat center center #ef5350;
+                        width: 100%;
+                        animation: slider 10s infinite alternate;
+                        .pic1 {
+                            float: left;
+                            height: 250px;
+                            width: 250px;
+                            border-radius: 125px;
+                            background: url('http://47.97.222.87:8088/file/download?fileName=logo.png') no-repeat center center #171717;
+                            background-size: 250px;
+                        }
+                        .pic2 {
+                            float: left;
+                            height: 250px;
+                            width: 250px;
+                            border-radius: 125px;
+                            background: url('http://47.97.222.87:8088/file/download?fileName=logo.png') no-repeat center center #171717;
+                            background-size: 250px;
+                        }
+                        .pic3 {
+                            float: left;
+                            height: 250px;
+                            width: 250px;
+                            border-radius: 125px;
+                            background: url('http://47.97.222.87:8088/file/download?fileName=logo.png') no-repeat center center #171717;
+                            background-size: 250px;
+                        }
+                    }
+                    @keyframes slider {
+                        0% {
+                            top: 0px
+                        }
+                        20% {
+                            top: 0px
+                        }
+                        30% {
+                            top: -250px
+                        }
+                        70% {
+                            top: -250px
+                        }
+                        80% {
+                            top: -500px
+                        }
+                        100% {
+                            top: -500px
+                        }
                     }
                 }
             }
             .home-slider-point {
-                height: 60%;
-                min-height: 250px;
                 flex: 1;
+                div {
+                    height: 8px;
+                    width: 8px;
+                    margin: 12px auto;
+                    background-color: #797979;
+                }
+                .point1 {
+                    animation: point1 10s infinite alternate;
+                }
+                .point2 {
+                    animation: point2 10s infinite alternate;
+                }
+                .point3 {
+                    animation: point3 10s infinite alternate;
+                }
+                @keyframes point1 {
+                    0% {
+                        background-color: #2196f3;
+                    }
+                    20% {
+                        background-color: #2196f3;
+                    }
+                    30% {
+                        background-color: #797979;
+                    }
+                    100% {
+                        background-color: #797979;
+                    }
+                }
+                @keyframes point2 {
+                    0% {
+                        background-color: #797979;
+                    }
+                    20% {
+                        background-color: #797979;
+                    }
+                    30% {
+                        background-color: #2196f3;
+                    }
+                    70% {
+                        background-color: #2196f3;
+                    }
+                    80% {
+                        background-color: #797979;
+                    }
+                    100% {
+                        background-color: #797979;
+                    }
+                }
+                @keyframes point3 {
+                    0% {
+                        background-color: #797979;
+                    }
+                    70% {
+                        background-color: #797979;
+                    }
+                    80% {
+                        background-color: #2196f3;
+                    }
+                    100% {
+                        background-color: #2196f3;
+                    }
+                }
             }
         }
     }

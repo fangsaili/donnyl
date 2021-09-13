@@ -17,7 +17,11 @@ public class WebConfig implements WebMvcConfigurer {
     @Override
     public void addInterceptors(InterceptorRegistry registry){
         registry.addInterceptor(tokenInterceptor)
-                .addPathPatterns("/**").excludePathPatterns("/user/login","/file/download","/contact/update","/watch/time");
+                .addPathPatterns("/**").excludePathPatterns("/user/login","/file/download",
+                "/contact/update","/watch/time",
+                "/about/all","/skill/all",
+                "/education/all","/experience/allwork","/experience/allaward",
+                "/portfolio/all");
     }
 //    @Autowired
 //    private TimeInterceptor timeInterceptor;

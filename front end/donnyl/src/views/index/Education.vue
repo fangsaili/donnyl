@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2021-09-03 11:36:01
- * @LastEditTime: 2021-09-09 14:24:30
+ * @LastEditTime: 2021-09-13 11:27:49
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /donnyl/src/views/index/Eduction.vue
@@ -37,17 +37,18 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
     data() {
         return {
             contents: [{
-                show: false,
+                show: 0,
                 color: "color:blue",
                 title: "HIGH SCHOOL DEGREE",
                 position: "WUHAN,2017-2019",
                 content: "I'm Fangsai Li. I'm Fangsai Li.I'm Fangsai Li.I'm Fangsai Li.I'm Fangsai Li.I'm Fangsai Li.I'm Fangsai Li.I'm Fangsai Li.I'm Fangsai Li.I'm Fangsai Li.I'm Fangsai Li.I'm Fangsai Li.I'm Fangsai Li.I'm Fangsai Li.I'm Fangsai Li.I'm Fangsai Li.I'm Fangsai Li.I'm Fangsai Li.I'm Fangsai Li.I'm Fangsai Li.I'm Fangsai Li.",
             }, {
-                show: false,
+                show: 0,
                 color: "color:blue",
                 title: "HIGH SCHOOL DEGREE",
                 position: "WUHAN,2017-2019",
@@ -57,9 +58,22 @@ export default {
     },
     mounted() {
         this.selectcolor()
+        this.getEducation();
 
     },
     methods: {
+        getEducation(){
+            axios.get(
+                '/education/all',
+
+            ).then((res) => {
+                this.contents = res.data.content;
+                console.log(res);
+            }).catch((err) => {
+                console.log(res);
+            });
+
+        },
         selectcolor() {
             var ct = document.querySelectorAll(".ed-ct-hd");
             for (let index = 0; index < ct.length; index++) {

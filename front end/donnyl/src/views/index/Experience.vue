@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2021-09-03 11:37:21
- * @LastEditTime: 2021-09-09 14:19:15
+ * @LastEditTime: 2021-09-13 12:00:13
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /donnyl/src/views/index/Experience.vue
@@ -43,12 +43,13 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
     data() {
         return {
             works: [{
                 title: "Web App Stop Variants",
-                date: "Jan 2021 - Mar 2021",
+                date: " ",
                 description: "I developed an app for the treatment of OBSessive-compulsive disorder for Jenny, professor of psychology in school, and it can run on Web, IOS and Android",
                 link: "https://github.com/fangsaili/Ustarios",
             }, {
@@ -121,8 +122,33 @@ export default {
     },
     mounted() {
         this.randancolor();
+        this.getWorks();
+        this.getAwards();
     },
     methods: {
+        getWorks(){
+            axios.get(
+                '/experience/allwork',
+
+            ).then((res) => {
+                this.works = res.data.content;
+                console.log(res);
+            }).catch((err) => {
+                console.log(res);
+            });
+
+        },
+        getAwards(){
+            axios.get(
+                '/experience/allaward',
+
+            ).then((res) => {
+                this.awards = res.data.content;
+                console.log(res);
+            }).catch((err) => {
+                console.log(res);
+            });
+        },
         randancolor() {
             var works = document.querySelectorAll(".experience-work-ds");
             for (let index = 0; index < works.length; index++) {

@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2021-09-03 11:36:32
- * @LastEditTime: 2021-09-10 16:48:14
+ * @LastEditTime: 2021-09-13 14:55:56
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /donnyl/src/views/index/Protifio.vue
@@ -34,6 +34,7 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
     data() {
         return {
@@ -140,6 +141,7 @@ export default {
   
     
     mounted() {
+        this.getPortfolio();
         window.addEventListener("resize", this.computeh);
         this.computeh();
         setTimeout(this.flashbacground(), 1000);
@@ -156,6 +158,18 @@ export default {
         }
     },
     methods: {
+        getPortfolio(){
+            axios.get(
+                '/portfolio/all',
+
+            ).then((res) => {
+                this.contents = res.data.content;
+                this.contentlist = this.contents;
+                console.log(res);
+            }).catch((err) => {
+                console.log(res);
+            });
+        },
         selectcategory(cg,index) {
             this.selectmenu(index)
             if (cg == "All") {
@@ -213,6 +227,10 @@ export default {
         computeh() {
             var divcontent = document.querySelector(".pt-contents");
             var divimg = divcontent.querySelectorAll("div");
+            console.log(divimg);
+            if(divimg.length == 0){
+                return
+            }
             var w = divimg[0].clientWidth;
             for (let index = 0; index < divimg.length ; index++) {
                 divimg[index].style.height = w * 3 / 4 + "px";

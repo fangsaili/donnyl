@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2021-09-03 10:52:16
- * @LastEditTime: 2021-09-10 16:47:53
+ * @LastEditTime: 2021-09-13 14:31:29
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /donnyl/src/views/index/Home.vue
@@ -23,13 +23,24 @@
             </div>
         </div>
         <div class="home-self-img">
+
             <div class="picture">
-                 
-                <div class="message" @click="toContact()"></div>
+                <div class="box-pic">
+                    <div class="pic1"></div>
+                    <div class="pic2"></div>
+                    <div class="pic3"></div>
+                </div>
+                
+
             </div>
+            <div class="message" @click="toContact()"></div>
         </div>
         <div class="home-slider-point">
-            
+            <div class="point1"></div>
+            <div class="point2"></div>
+            <div class="point3"></div>
+
+
         </div>
     </div>
 </div>
@@ -39,34 +50,34 @@
 export default {
     name: 'Mehome',
     beforeRouteLeave(to, from, next) {
-         window.removeEventListener("resize",this.changeHeight)
-         next();
+        window.removeEventListener("resize", this.changeHeight)
+        next();
     },
 
     mounted() {
         // setInterval(this.changeHeight, 1000)
         this.changeHeight();
-        window.addEventListener("resize",this.changeHeight)
+        window.addEventListener("resize", this.changeHeight)
 
     },
     methods: {
-        toContact(){
+        toContact() {
             this.$router.push("/index/contact");
             var lst = document.querySelector('.menulist');
             var lis = lst.querySelectorAll('li');
-            
-            for (var i = 0;i<7;i++) {
+
+            for (var i = 0; i < 7; i++) {
                 lis[i].style.backgroundColor = '';
             }
             lis[6].style.backgroundColor = '#2196f3';
             lis[6].style.transform = 'scale(1.2)';
         },
-        toportfolio(){
+        toportfolio() {
             this.$router.push("/index/portifio");
             var lst = document.querySelector('.menulist');
             var lis = lst.querySelectorAll('li');
-            
-            for (var i = 0;i<7;i++) {
+
+            for (var i = 0; i < 7; i++) {
                 lis[i].style.backgroundColor = '';
             }
             lis[4].style.backgroundColor = '#2196f3';
