@@ -1,7 +1,7 @@
 <!--
  * @Author: fangsai li
  * @Date: 2021-09-03 11:35:28
- * @LastEditTime: 2021-09-13 15:15:08
+ * @LastEditTime: 2021-09-14 14:19:35
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /donnyl/src/App.vue
@@ -82,6 +82,7 @@ import axios from "axios"
 export default {
     data() {
         return {
+            description: [],
             menulist: [{
                 name: 'Home',
                 path: '/'
@@ -108,18 +109,56 @@ export default {
     },
     mounted() {
         this.tohome();
-        axios.get(
-            '/watch/time',
+        // http://ip-api.com/json/77.88.61.200?lang=zh-CN
+        // var url = this.getip();
+        var position = this.getip();
 
-        ).then((res) => {
-            console.log(res);
-        }).catch((err) => {
-            console.log(res);
-        });
+        // this.setTime(position);
+        setTimeout(() => {
+            console.log(this.description)
+            axios.post(
+                '/watch/time',
+                JSON.stringify(this.description)
 
+            ).then((res) => {
+                console.log(res);
+            }).catch((err) => {
+                console.log(err);
+            });
+
+        }, 5000);
     },
 
     methods: {
+        async setTime(position) {
+            await axios.get(
+                '/watch/time'
+
+            ).then((res) => {
+                console.log(res);
+            }).catch((err) => {
+                console.log(err);
+            });
+        },
+        async getip() {
+            axios.get(
+                '/watch/ip',
+
+            ).then((res) => {
+                console.log(res);
+
+                axios.get("http://ip-api.com/json/" + res.data + "?lang=zh-CN").then((res) => {
+                    this.description = JSON.stringify(res.data)
+                }).catch((err) => {
+                    this.description = err.data
+
+                });
+
+            }).catch((err) => {
+                console.log(err);
+                return err.data;
+            });
+        },
         opnelink(link) {
             window.open("https://www.linkedin.com/in/%E6%96%B9%E8%B5%9B-%E6%9D%8E-569878204");
 
