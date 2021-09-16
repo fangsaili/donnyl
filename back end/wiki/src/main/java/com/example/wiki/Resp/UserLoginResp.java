@@ -14,7 +14,7 @@ public class UserLoginResp implements Serializable {
 
     private Long id;
 
-    private Long token;
+    private String token;
 
     private String date;
     private Long resttime;
@@ -26,24 +26,32 @@ public class UserLoginResp implements Serializable {
 
     private String name;
 
-    public Long getRestTime() {
-        return resttime;
-    }
-
-    public void setRestTime(Long time) {
-        this.resttime = time;
-    }
-
     @Override
     public String toString() {
         return "UserLoginResp{" +
                 "id=" + id +
-                ", token=" + token +
+                ", token='" + token + '\'' +
                 ", date='" + date + '\'' +
                 ", resttime=" + resttime +
                 ", loginName='" + loginName + '\'' +
                 ", name='" + name + '\'' +
                 '}';
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
     }
 
     public String getDate() {
@@ -54,20 +62,12 @@ public class UserLoginResp implements Serializable {
         this.date = date;
     }
 
-    public Long getToken() {
-        return token;
+    public Long getResttime() {
+        return resttime;
     }
 
-    public void setToken(Long token) {
-        this.token = token;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
+    public void setResttime(Long resttime) {
+        this.resttime = resttime;
     }
 
     public String getLoginName() {

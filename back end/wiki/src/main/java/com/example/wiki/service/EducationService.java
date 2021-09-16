@@ -2,6 +2,7 @@ package com.example.wiki.service;
 
 
 import com.example.wiki.entity.Education;
+import com.example.wiki.entity.Skill;
 import com.example.wiki.mapper.EducationMapper;
 import org.springframework.stereotype.Service;
 
@@ -15,5 +16,20 @@ public class EducationService {
 
     public List<Education> findAllEducation() {
         return educationMapper.selectByExample(null);
+    }
+
+    public int editEducation(Education education) {
+        int res =  educationMapper.updateByPrimaryKeySelective(education);
+        return res;
+    }
+
+    public int insertEducation(Education education) {
+        int res =  educationMapper.insertSelective(education);
+        return res;
+    }
+
+    public int deleteEducation(Education education) {
+        int res =  educationMapper.deleteByPrimaryKey(education.getId());
+        return res;
     }
 }

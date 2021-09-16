@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="34.062" height="34" viewBox="0 0 34.062 34">
+  <defs>
+    <style>
+      .cls-1 {
+        fill-rule: evenodd;
+        opacity: 1;
+        filter: url(#filter);
+      }
+    </style>
+    <filter id="filter" x="135" y="539" width="34.062" height="34" filterUnits="userSpaceOnUse">
+      <feFlood result="flood" flood-color="#2196f3"/>
+      <feComposite result="composite" operator="in" in2="SourceGraphic"/>
+      <feBlend result="blend" in2="SourceGraphic"/>
+    </filter>
+  </defs>
+  <path id="Facebook" class="cls-1" d="M152.036,539a17,17,0,1,0,17.033,17A17.034,17.034,0,0,0,152.036,539Zm4.236,17.594H153.5v9.856H149.4V556.6h-1.952v-3.483H149.4v-2.253a3.846,3.846,0,0,1,4.144-4.135l3.041,0.012v3.381h-2.208a0.834,0.834,0,0,0-.87.948v2.048h3.128Z" transform="translate(-135 -539)"/>
+</svg>

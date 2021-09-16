@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-09-01 16:40:24
- * @LastEditTime: 2021-09-03 11:44:39
+ * @LastEditTime: 2021-09-15 14:16:26
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /donnyl/src/router/index.js
@@ -62,10 +62,12 @@ const routes = [{
             import ( /* webpackChunkName: "about" */ '../views/index/Testimonial.vue')
     },
 
+
 ]
 
 const router = createRouter({
     history: createWebHashHistory(),
+
     routes
 })
 

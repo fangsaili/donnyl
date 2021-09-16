@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2021-09-03 11:36:32
- * @LastEditTime: 2021-09-13 14:55:56
+ * @LastEditTime: 2021-09-16 16:40:02
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /donnyl/src/views/index/Protifio.vue
@@ -44,7 +44,7 @@ export default {
                 {
                     category: "web",
                     link: "http://47.97.222.87",
-                    linkimg: "http://47.97.222.87:8088/file/download?fileName=donnyl.png"
+                    linkimg: "/file/download?fileName=donnyl.png"
                 },
                 {
                     category: "web",
@@ -90,7 +90,7 @@ export default {
                 {
                     category: "Web",
                     link: "http://47.97.222.87",
-                    linkimg: "http://47.97.222.87:8088/file/download?fileName=donnyl.png"
+                    linkimg: "/file/download?fileName=donnyl.png"
                 },
                 {
                     category: "Web",
@@ -215,7 +215,7 @@ export default {
                 ft.parentElement.style.backgroundImage = "";
                 if (this.contentlist[index].linkimg != "") {
 
-                    ft.parentElement.style.backgroundImage = "url(" + this.contentlist[index].linkimg + ")";
+                    ft.parentElement.style.backgroundImage = "url(" + axios.defaults.baseURL +this.contentlist[index].linkimg + ")";
                     ft.parentElement.style.backgroundSize = "100% 100%";
 
                 }

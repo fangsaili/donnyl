@@ -1,0 +1,294 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-09-15 14:32:48
+ * @LastEditTime: 2021-09-16 09:55:48
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: /front end/donnyl-manager/src/App.vue
+-->
+<template>
+<div id="nav">
+    <el-container>
+        <!-- lift area Aside cv -->
+        <el-aside>
+            <div class="details">
+                <div class="toutou"></div>
+                <div class="d-name">
+                    <div class="l-name">Fangsai Li</div>
+                    <div class="sm-name">
+                        <span>Undergraduate </span>
+                        <span>in KCL</span>
+                    </div>
+                </div>
+                <div class="d-links">
+                    <ul>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+
+                        <li @click="opnelink()"></li>
+                        <li></li>
+                    </ul>
+                </div>
+                <div class="d-self">
+                    <div class="d-title">What’s in My Mind</div>
+                    <div class="d-content">
+                        We can develop and design anything beyond your ima gination. About
+                        our work, we don’t say anything because our work speaks. For
+                        more, you can ask our clients and they will tell you how much
+                        satisfied they are with our services. So, what are you waiting
+                        for?
+                    </div>
+                </div>
+                <div class="d-downloadcv">
+                    <button class="downloadcv" @click="downloadcv()">
+                        <span class="down">
+
+                        </span>
+                        <span>Download CV</span>
+                    </button>
+                </div>
+            </div>
+        </el-aside>
+
+        <!-- right area Menu and Main-->
+        <el-container class="right-area">
+            <!-- menu -->
+            <el-header>
+                <ul class="menulist">
+                    <li v-for="(item, i) in menulist" key="i" @click="menuclick(item,i)"><span>{{item.name}}</span></li>
+                    <li class="l-search"></li>
+                    <li class="l-menu" @click="showlogin=!showlogin"></li>
+
+                </ul>
+            </el-header>
+            <el-main>
+                <router-view></router-view>
+
+            </el-main>
+            <el-footer>
+                <div>
+                    © 2021 <span style="color:#2196f3">Fangsai Li</span>. All rights reserved. Design by <span style="color:#ef5350">webstrot.&nbsp </span>/&nbsp&nbsp<a id="Icplink" @click="toIcp()">鄂ICP备2021015598号-1</a>
+                </div>
+            </el-footer>
+        </el-container>
+    </el-container>
+
+    <el-drawer v-model="showlogin" custom-class="demo-drawer" ref="drawer">
+        <div class="demo-drawer__content">
+            <el-form :model="form">
+                <el-form-item label="Name" :label-width="formLabelWidth">
+                    <el-input v-model="form.name" autocomplete="off"></el-input>
+                </el-form-item>
+                <el-form-item label="Password" :label-width="formLabelWidth">
+                    <el-input v-model="form.password" autocomplete="off" show-password></el-input>
+                </el-form-item>
+
+            </el-form>
+            <div class="demo-drawer__footer">
+
+                <el-button type="primary" @click="login()">Confirm</el-button>
+                <el-button type="primary" @click="find()">Find</el-button>
+            </div>
+        </div>
+    </el-drawer>
+
+</div>
+</template>
+
+<script>
+import axios from "axios"
+// const transformResponse = function (res) {
+//     res = res.replace(/\"token\":(\d+)/g, '"token":"$1"')
+//     return JSON.parse(res)
+// }
+
+// const instance = axios.create({
+//   baseURL: 'http://localhost:8088',
+//   transformResponse 
+// })
+
+export default {
+    data() {
+        return {
+            form: {
+                name: '',
+                password: '',
+            },
+            formLabelWidth: '80px',
+            showlogin: false,
+            description: [],
+            menulist: [{
+                name: 'Home',
+                path: '/'
+            }, {
+                name: 'About',
+                path: '/index/about'
+            }, {
+                name: 'Skills',
+                path: '/index/skills'
+            }, {
+                name: 'Education',
+                path: '/index/education'
+            }, {
+                name: 'Portfolio',
+                path: '/index/portifio'
+            }, {
+                name: 'Experience',
+                path: '/index/experience'
+            }, {
+                name: 'Contact',
+                path: '/index/contact'
+            }, ],
+            timer: null,
+        };
+    },
+    mounted() {
+        this.tohome();
+
+    },
+
+    methods: {
+        login() {
+            // http://localhost:8088/user/login?password=lfs1234&loginName=lfs
+            axios.get('/user/login', {
+                params: {
+                    loginName: this.form.name,
+                    password: this.form.password
+                }
+            }).then((res) => {
+
+                console.log(res);
+                // axios.defaults.headers = {"token": res.data.content.token}
+
+                sessionStorage.setItem('token', res.data.content.token)
+
+            }).catch((err) => {
+                console.log(err);
+
+            })
+        },
+
+        find() {
+            // http://47.97.222.87:8088/user/findall
+            console.log(axios.defaults.headers);
+
+            axios.get('/user/findall').then(function (res) {
+
+                    console.log(res);
+
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
+
+        },
+
+        opnelink(link) {
+            window.open("https://www.linkedin.com/in/%E6%96%B9%E8%B5%9B-%E6%9D%8E-569878204");
+
+        },
+        toIcp() {
+            window.open("http://beian.miit.gov.cn/")
+        },
+        tohome() {
+            var lst = document.querySelector('.menulist');
+            var lis = lst.querySelectorAll('li');
+
+            for (var i = 0; i < lis.length; i++) {
+                lis[i].style.backgroundColor = '';
+                lis[i].style.transform = 'scale(1)';
+            }
+            lis[0].style.backgroundColor = '#2196f3';
+            lis[0].style.transform = 'scale(1.2)';
+        },
+
+        downloadcv() {
+            let a = document.createElement('a')
+            a.href = "http://47.97.222.87:8088/file/download?fileName=李方赛的简历.docx"
+            a.click();
+
+        },
+
+        menuclick(value, index) {
+            var lst = document.querySelector('.menulist');
+            var lis = lst.querySelectorAll('li');
+            for (var i = 0; i < lis.length; i++) {
+                lis[i].style.backgroundColor = '';
+                lis[i].style.transform = 'scale(1)';
+            }
+
+            lis[index].style.backgroundColor = '#2196f3';
+            lis[index].style.transform = 'scale(1.2)';
+            this.$router.push(value.path);
+        }
+    },
+}
+</script>
+
+<style>
+@import url("assets/css/leftarea.css");
+@import url("assets/css/menu.css");
+@import url("views/css/nomalize.css");
+
+#Icplink {
+    font-size: 12px;
+}
+
+#Icplink:hover {
+    color: #797979;
+}
+
+.right-area {
+    height: 100vh;
+    overflow: scroll;
+}
+
+.bg {
+    background-color: #111111;
+}
+
+.el-header,
+.el-footer {
+
+    padding: 0;
+    margin: 2vw 2vw 2vw 0px;
+    background-color: #222222;
+    color: #ffffff;
+    text-align: center;
+
+}
+
+.el-aside {
+    width: 20%;
+    margin: 2vw;
+    background-color: #222222;
+
+    text-align: center;
+}
+
+.el-main {
+    margin-right: 2vw;
+    background-color: #222222;
+    color: #ffffff;
+    text-align: center;
+    line-height: 160px;
+    font: 900;
+    font-size: 20px;
+
+}
+
+html {
+    min-width: 800px;
+}
+
+#app {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+    min-width: 800px;
+}
+</style>

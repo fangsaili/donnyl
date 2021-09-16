@@ -16,4 +16,9 @@ public class About_detailsService {
     public List<AboutContent> findAllAboutContent() {
         return aboutContentMapper.selectByExample(null);
     }
+
+    public int editContent(AboutContent aboutContent) {
+        int res =  aboutContentMapper.updateByPrimaryKeySelective(aboutContent);
+        return res;
+    }
 }

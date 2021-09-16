@@ -1,6 +1,7 @@
 package com.example.wiki.service;
 
 import com.example.wiki.entity.Award;
+import com.example.wiki.entity.Award;
 import com.example.wiki.mapper.AwardMapper;
 import org.springframework.stereotype.Service;
 
@@ -14,5 +15,20 @@ public class AwardService {
 
     public List<Award> findAllAward() {
         return awardMapper.selectByExample(null);
+    }
+
+    public int editAward(Award award) {
+        int res =  awardMapper.updateByPrimaryKeySelective(award);
+        return res;
+    }
+
+    public int insertAward(Award award) {
+        int res =  awardMapper.insertSelective(award);
+        return res;
+    }
+
+    public int deleteAward(Award award) {
+        int res =  awardMapper.deleteByPrimaryKey(award.getId());
+        return res;
     }
 }

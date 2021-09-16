@@ -1,0 +1,15 @@
+* {
+    margin: 0;
+    padding: 0;
+    color: #ffffff;
+    box-sizing: border-box;
+    list-style: none;
+    /* -webkit-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none; */
+}
+
+body {
+    background-color: #111111;
+}

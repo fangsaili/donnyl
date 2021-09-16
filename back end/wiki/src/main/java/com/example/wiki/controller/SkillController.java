@@ -24,4 +24,32 @@ public class SkillController {
 
         return skillCommenResp;
     }
+
+    @RequestMapping("/edit")
+    public CommenResp<Skill> editSkill(Skill skill){
+        CommenResp<Skill> skillCommenResp = new CommenResp<>();
+
+        skillCommenResp.setMessage(skillService.editSkill(skill) + "");
+        skillCommenResp.setContent(skill);
+        return skillCommenResp;
+    }
+
+    @RequestMapping("/insert")
+    public CommenResp<Skill> insertSkill(Skill skill){
+        CommenResp<Skill> skillCommenResp = new CommenResp<>();
+
+        skillCommenResp.setMessage(skillService.insertSkill(skill) + "");
+        skillCommenResp.setContent(skill);
+        return skillCommenResp;
+    }
+
+    @RequestMapping("/delete")
+    public CommenResp<Skill> deleteSkill(Skill skill){
+        CommenResp<Skill> skillCommenResp = new CommenResp<>();
+
+        skillCommenResp.setMessage(skillService.deleteSkill(skill) + "");
+        skillCommenResp.setContent(skill);
+        return skillCommenResp;
+    }
+
 }

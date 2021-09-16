@@ -99,7 +99,7 @@ public class UserController {
     @ResponseBody
     public UserLoginResp loginuser(String key){
         UserLoginResp user =(UserLoginResp) redisUtils.get(key);
-        user.setRestTime(redisUtils.getExpire(key));
+        user.setResttime(redisUtils.getExpire(key));
         return user;
     }
 
@@ -112,13 +112,15 @@ public class UserController {
         UserLoginResp userLoginResp = user.userlogin(userLogin);
 
         Long token = snowflakeIdWorker.nextId();
-        userLoginResp.setToken(token);
+//        Long token = 218685551631400960L;
+        userLoginResp.setToken(token + "");
         userLoginResp.setDate("3600 * 1");
         redisUtils.set(token + "",userLoginResp,3600 * 1);
 //        redisTemplate.opsForValue().set(token,userLoginResp,3600 * 24, TimeUnit.SECONDS);
         LOG.info("生成token存入redis:{}",token);
 
         resp.setContent(userLoginResp);
+        LOG.info("生成token存入redis:{}",resp);
         return resp;
 
     }

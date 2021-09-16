@@ -23,4 +23,13 @@ public class AboutContentController {
 
         return aboutContentCommenResp;
     }
+
+    @RequestMapping("/edit")
+    public CommenResp<AboutContent> editcontent(AboutContent aboutContent){
+        CommenResp<AboutContent> aboutContentCommenResp = new CommenResp<>();
+
+        aboutContentCommenResp.setMessage(about_detailsService.editContent(aboutContent) + "");
+        aboutContentCommenResp.setContent(aboutContent);
+        return aboutContentCommenResp;
+    }
 }

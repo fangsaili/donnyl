@@ -1,0 +1,209 @@
+.toutou {
+  height: 13vh;
+  background-color: #171717;
+}
+
+.d-name {
+  width: 100%;
+  background-color: #2c2c2c;
+  padding: 3vw 3vw;
+  font-family: "Merienda";
+  overflow: hidden;
+}
+@media only screen and (max-width: 500px) {
+  .d-name {
+    height: 50px;
+  }
+}
+.d-name .l-name {
+  font-weight: 900;
+  font-size: 2.2vw;
+  line-height: 2.2vw;
+}
+.d-name .sm-name {
+  margin: 0.8vw;
+  font-weight: 900;
+  font-size: 0.8vw;
+  line-height: 0.8vw;
+}
+@media only screen and (max-width: 1100px) {
+  .d-name .sm-name {
+    line-height: 1.6vw;
+    transform: scale(0.8);
+  }
+  .d-name .sm-name .d-name {
+    height: 15vw;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .d-name .sm-name {
+    line-height: 2vw;
+    transform: scale(0.5);
+  }
+  .d-name .sm-name .d-name {
+    height: 20vw;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .d-name .sm-name {
+    font-size: 12px;
+    line-height: 12px;
+    transform: scale(0.5);
+  }
+}
+.d-name .sm-name span:first-child {
+  color: #2196f3;
+}
+.d-name .sm-name span:last-child {
+  color: #555555;
+}
+
+.d-links {
+  width: 100%;
+  padding: 2.5vw 3vw;
+  background-color: #222222;
+  border-bottom: 2px solid #393939;
+}
+@media only screen and (max-width: 500px) {
+  .d-links {
+    height: 40px;
+  }
+}
+.d-links ul {
+  width: 17vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media only screen and (max-width: 500px) {
+  .d-links ul {
+    width: 170px;
+  }
+}
+.d-links ul > li {
+  flex: 1;
+  height: 1.9vw;
+  width: 2.2vw;
+  background-repeat: no-repeat;
+  background-size: 1.8vw 1.9vw;
+}
+@media only screen and (max-width: 500px) {
+  .d-links ul > li {
+    height: 15px;
+    width: 15px;
+    background-size: 15px;
+  }
+}
+.d-links ul > li:nth-child(1) {
+  background-image: url("../images/svg/Facebook.svg");
+}
+.d-links ul > li:nth-child(1):hover {
+  background-image: url("../images/svg/Facebook copy.svg");
+}
+.d-links ul > li:nth-child(2) {
+  background-image: url("../images/svg/Twitter.svg");
+}
+.d-links ul > li:nth-child(2):hover {
+  background-image: url("../images/svg/Twitter copy.svg");
+}
+.d-links ul > li:nth-child(3) {
+  background-image: url("../images/svg/Behance.svg");
+}
+.d-links ul > li:nth-child(3):hover {
+  background-image: url("../images/svg/Behance copy.svg");
+}
+.d-links ul > li:nth-child(4) {
+  background-image: url("../images/svg/Instragram.svg");
+}
+.d-links ul > li:nth-child(4):hover {
+  background-image: url("../images/svg/Instragram copy.svg");
+}
+.d-links ul > li:nth-child(5) {
+  background-image: url("../images/svg/Linkedin.svg");
+}
+.d-links ul > li:nth-child(5):hover {
+  background-image: url("../images/svg/Linkedin copy.svg");
+}
+.d-links ul > li:nth-child(6) {
+  background-image: url("../images/svg/Dribble.svg");
+}
+.d-links ul > li:nth-child(6):hover {
+  background-image: url("../images/svg/Dribble copy.svg");
+}
+
+.d-self {
+  width: 100%;
+  padding: 3vw 3vw;
+  background-color: #222222;
+  border-bottom: 2px solid #393939;
+  text-align: left;
+}
+.d-self .d-title {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+}
+.d-self .d-content {
+  font-size: 12px;
+  color: #555555;
+}
+
+.d-downloadcv {
+  padding: 3vw 3vw;
+  line-height: 20px;
+}
+.d-downloadcv .downloadcv {
+  position: relative;
+  width: 70%;
+  background-color: #2196f3;
+  border: none;
+  color: white;
+  padding: 1vw 2vw;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+.d-downloadcv .downloadcv:hover {
+  background-color: dimgray;
+}
+.d-downloadcv .downloadcv:active {
+  top: 2px;
+}
+.d-downloadcv .downloadcv span {
+  display: inline-block;
+}
+@media only screen and (min-width: 1201px) {
+  .d-downloadcv .downloadcv span {
+    font-size: 12px;
+    transform: scale(1);
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .d-downloadcv .downloadcv span {
+    font-size: 12px;
+    transform: scale(0.7);
+  }
+}
+@media only screen and (max-width: 500px) {
+  .d-downloadcv .downloadcv span {
+    font-size: 12px;
+    transform: scale(0.5);
+  }
+}
+.d-downloadcv .downloadcv .down {
+  margin: 0 5px;
+  vertical-align: middle;
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+  line-height: 20px;
+  background-image: url("../images/svg/download.svg");
+  background-repeat: no-repeat;
+}
+@media only screen and (max-width: 500px) {
+  .d-downloadcv .downloadcv .down {
+    height: 20px;
+    width: 20px;
+    transform: scale(0.5);
+  }
+}/*# sourceMappingURL=leftarea.css.map */
