@@ -394,6 +394,76 @@ public class ContactExample {
             return (Criteria) this;
         }
 
+        public Criteria andQuestionIsNull() {
+            addCriterion("question is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andQuestionIsNotNull() {
+            addCriterion("question is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andQuestionEqualTo(String value) {
+            addCriterion("question =", value, "question");
+            return (Criteria) this;
+        }
+
+        public Criteria andQuestionNotEqualTo(String value) {
+            addCriterion("question <>", value, "question");
+            return (Criteria) this;
+        }
+
+        public Criteria andQuestionGreaterThan(String value) {
+            addCriterion("question >", value, "question");
+            return (Criteria) this;
+        }
+
+        public Criteria andQuestionGreaterThanOrEqualTo(String value) {
+            addCriterion("question >=", value, "question");
+            return (Criteria) this;
+        }
+
+        public Criteria andQuestionLessThan(String value) {
+            addCriterion("question <", value, "question");
+            return (Criteria) this;
+        }
+
+        public Criteria andQuestionLessThanOrEqualTo(String value) {
+            addCriterion("question <=", value, "question");
+            return (Criteria) this;
+        }
+
+        public Criteria andQuestionLike(String value) {
+            addCriterion("question like", value, "question");
+            return (Criteria) this;
+        }
+
+        public Criteria andQuestionNotLike(String value) {
+            addCriterion("question not like", value, "question");
+            return (Criteria) this;
+        }
+
+        public Criteria andQuestionIn(List<String> values) {
+            addCriterion("question in", values, "question");
+            return (Criteria) this;
+        }
+
+        public Criteria andQuestionNotIn(List<String> values) {
+            addCriterion("question not in", values, "question");
+            return (Criteria) this;
+        }
+
+        public Criteria andQuestionBetween(String value1, String value2) {
+            addCriterion("question between", value1, value2, "question");
+            return (Criteria) this;
+        }
+
+        public Criteria andQuestionNotBetween(String value1, String value2) {
+            addCriterion("question not between", value1, value2, "question");
+            return (Criteria) this;
+        }
+
         public Criteria andSubjectIsNull() {
             addCriterion("subject is null");
             return (Criteria) this;

@@ -290,4 +290,8 @@
     UPDATE watchtimes SET contacttimes=0
   </update>
 
+  <select id="timesSum" resultType="java.lang.Integer">
+    SELECT SUM(times) FROM watchtimes
+  </select>
+
 </mapper>

@@ -2,6 +2,7 @@ package com.example.wiki.controller;
 
 import com.example.wiki.Resp.CategoryResp;
 import com.example.wiki.Resp.CommenResp;
+import com.example.wiki.entity.Contact;
 import com.example.wiki.entity.Watchtimes;
 import com.example.wiki.mapper.WatchtimesMapper;
 import com.example.wiki.req.CategorySave;
@@ -61,6 +62,26 @@ public class ContactController {
             }
         }
 
+
+    }
+
+    @GetMapping("/all")
+    @ResponseBody
+    public CommenResp saveContact(){
+        CommenResp<List<Contact>> commenResp = new CommenResp<>();
+        commenResp.setContent(contactService.getcontacts());
+
+
+        return commenResp;
+
+    }
+
+    @GetMapping("/allcontact")
+    @ResponseBody
+    public int findtimes(){
+
+
+        return contactService.getcontacttime();
 
     }
 

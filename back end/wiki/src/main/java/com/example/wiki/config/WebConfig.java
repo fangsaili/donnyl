@@ -21,7 +21,7 @@ public class WebConfig implements WebMvcConfigurer {
                 "/contact/update","/watch/time","/watch/ip",
                 "/about/all","/skill/all",
                 "/education/all","/experience/allwork","/experience/allaward",
-                "/portfolio/all");
+                "/portfolio/all","/contact/allcontact","/watch/alltimes");
     }
 //    @Autowired
 //    private TimeInterceptor timeInterceptor;

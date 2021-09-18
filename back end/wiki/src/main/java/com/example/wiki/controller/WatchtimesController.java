@@ -21,6 +21,12 @@ public class WatchtimesController {
     @Resource
     private WatchtimesMapper watchtimesMapper;
 
+    @RequestMapping("/alltimes")
+    public int findalltime(){
+        return watchtimesMapper.timesSum();
+    }
+
+
     @RequestMapping("/ip")
     public String findip(HttpServletRequest httpRequest){
         return httpRequest.getRemoteAddr();

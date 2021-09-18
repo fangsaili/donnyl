@@ -34,5 +34,15 @@ public class ContactService {
         }
     }
 
+    public List<Contact> getcontacts(){
+        return contactMapper.selectByExample(null);
+
+    }
+
+    public int getcontacttime(){
+        return contactMapper.contactsum();
+
+    }
+
 
 }

@@ -25,4 +25,5 @@ public class WikiUserService  {
 
         return wikiuser.selectByPrimaryKey(id);
     }
+
 }
