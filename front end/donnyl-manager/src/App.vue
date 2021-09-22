@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2021-09-15 14:32:48
- * @LastEditTime: 2021-09-18 15:53:56
+ * @LastEditTime: 2021-09-22 15:43:02
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /front end/donnyl-manager/src/App.vue
@@ -13,7 +13,7 @@
         <el-aside>
             <div class="details">
                 <div class="toutou"></div>
-                <div class="d-name">
+                <div class="d-name">ç
                     <div class="l-name">Fangsai Li</div>
                     <div class="sm-name">
                         <span>Undergraduate </span>
@@ -94,10 +94,11 @@
         </div>
     </el-drawer>
     <div id="float-window" @click="changecondition()" class="big-float-window">
-        <div v-if="windowbigsize == true">
-            
+        <div id="ft-wd-ct" >
+            <div style="font-size:18px; color:#0917FF; font-family: 'Merienda';font-weight:900">Welcome My Web!</div>
             <div >Watch Times:{{sumwatchtimes}}</div>
             <div >Contact Times:{{sumcontacttimes}}</div>
+            <div style="line-height:100px; color:#ccc; font-size:16px">Click  narrow</div>
         </div>
     </div>
 
@@ -292,12 +293,18 @@ export default {
     methods: {
         changecondition() {
             this.fwindow.style.transition = "all 0.5s"
+             var div = document.getElementById('ft-wd-ct');
             if (this.windowbigsize == true) {
                 // fwindow.style.transform = "all 0.5s"
                 this.fwindow.setAttribute("class", "small-float-window");
+                div.style.display = "none";
+                // this.fwindow.
             } else {
                 // fwindow.style.transform = "all 0.5s"
                 this.fwindow.setAttribute("class", "big-float-window");
+                setTimeout(function(){
+                    var div = document.getElementById('ft-wd-ct');
+                    div.style.display = "";},500)
 
             }
             setTimeout(()=>{var that = this; that.fwindow.style.transition = "all 0.05s"},600)
@@ -318,12 +325,17 @@ export default {
 
             const click = setTimeout(function () {
                 fwindow.style.transition = "all 0.5s"
+                var div = document.getElementById('ft-wd-ct');
                 if (this.windowbigsize == true) {
                     // fwindow.style.transform = "all 0.5s"
                     fwindow.setAttribute("class", "small-float-window");
+                    // var div = document.getElementById('ft-wd-ct');
+                    // console.log(div)
+                    div.style.display = "none";
                 } else {
                     // fwindow.style.transform = "all 0.5s"
                     fwindow.setAttribute("class", "big-float-window");
+                    div.style.display = "";
 
                 }
                 this.windowbigsize = !this.windowbigsize;
@@ -552,6 +564,8 @@ export default {
 @import url("assets/css/leftarea.css");
 @import url("assets/css/menu.css");
 @import url("views/css/nomalize.css");
+@import url("assets/font/merienda/Merienda.css");
+
 
 #float-window {
 
