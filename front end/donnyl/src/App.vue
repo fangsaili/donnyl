@@ -1,7 +1,7 @@
 <!--
  * @Author: fangsai li
  * @Date: 2021-09-03 11:35:28
- * @LastEditTime: 2021-09-22 15:47:10
+ * @LastEditTime: 2021-09-22 18:20:46
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /donnyl/src/App.vue
@@ -417,8 +417,11 @@ export default {
 
             ).then((res) => {
                 console.log(res);
-
-                axios.get("http://ip-api.com/json/" + res.data + "?lang=zh-CN").then((res) => {
+//http://api.ip138.com/ip/
+//"http://ip-api.com/json/" + res.data + "?lang=zh-CN"
+//token=5a6f4e4807db6d3a1788cf88df855139{oid=50045,mid=110096}
+//https://api.ip138.com/ip/?ip=109.249.187.125&datatype=jsonp&token=5a6f4e4807db6d3a1788cf88df855139//
+                axios.get("https://api.ip138.com/ip/?ip=" + res.data + "&datatype=jsonp&token=5a6f4e4807db6d3a1788cf88df855139").then((res) => {
                     this.description = JSON.stringify(res.data)
                 }).catch((err) => {
                     this.description = err.data

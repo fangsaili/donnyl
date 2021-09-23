@@ -2,11 +2,13 @@
   padding: 2vh 2vw 0 4vw;
   line-height: 50px;
 }
+
 .about .about-title {
   margin: 10px 0;
   text-align: left;
   line-height: 46px;
 }
+
 .about .about-title .about-img {
   display: inline-block;
   height: 46px;
@@ -14,12 +16,14 @@
   vertical-align: middle;
   background: url("../../assets/images/svg/Aboutsvg.svg") no-repeat;
 }
+
 .about .about-title .about-aboutme {
   line-height: 1;
   height: 34px;
   font-size: 34px;
   font-weight: 900;
 }
+
 .about .about-title-content {
   margin: 20px 0;
   line-height: 20px;
@@ -28,22 +32,27 @@
   font-size: 12px;
   color: #797979;
 }
+
 .about .about-content {
   margin: 20px 0;
 }
+
 .about .about-content .about-personal {
   width: 100px;
   text-align: left;
   font-size: 18px;
   font-weight: 700;
 }
+
 .about .about-content .about-personal-details {
   text-align: left;
   font-size: 16px;
   color: #797979;
 }
+
 .about .about-content .about-personal-details .about-details-hd {
   display: inline-block;
   width: 120px;
   color: #797979;
-}/*# sourceMappingURL=about.css.map */
+}
+/*# sourceMappingURL=about.css.map */

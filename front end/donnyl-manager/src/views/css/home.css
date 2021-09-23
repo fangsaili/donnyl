@@ -1,42 +1,60 @@
 .home {
   padding: 0 2vw 0 4vw;
 }
+
 .home .home-content {
   height: 100%;
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
+
 .home .home-content .home-self {
   height: 50%;
   min-height: 250px;
-  flex: 20;
+  -webkit-box-flex: 20;
+      -ms-flex: 20;
+          flex: 20;
   border-right: 1px solid #2d2d2d;
   text-align: left;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
+
 .home .home-content .home-self .hello {
   line-height: 8vh;
   font-size: 8vh;
   font-weight: 800;
 }
+
 .home .home-content .home-self .name {
   margin: 20px 0;
   font-size: 4vh;
   line-height: 4vh;
   font-weight: 200;
 }
+
 .home .home-content .home-self .im {
   font-size: 2vh;
   line-height: 2vh;
   font-weight: 200;
 }
+
 .home .home-content .home-self .d-downloadimg {
   padding: 3vw 0;
   line-height: 2vw;
 }
+
 .home .home-content .home-self .d-downloadimg .downloadimg {
   background-color: #2196f3;
   border: none;
@@ -47,19 +65,24 @@
   font-size: 2vw;
   line-height: 2vw;
 }
+
 .home .home-content .home-self .d-downloadimg .downloadimg:hover {
   background-color: dimgray;
 }
+
 .home .home-content .home-self .d-downloadimg .downloadimg:active {
   top: 2px;
 }
+
 .home .home-content .home-self .d-downloadimg .downloadimg span {
   display: inline-block;
   font-size: 1.5vw;
 }
+
 .home .home-content .home-self .d-downloadimg .downloadimg .txt {
   line-height: 2vw;
 }
+
 .home .home-content .home-self .d-downloadimg .downloadimg .img {
   height: 25px;
   width: 30px;
@@ -68,23 +91,35 @@
   display: inline-block;
   background: url("../../assets/images/svg/image.svg") no-repeat center center;
 }
+
 @media only screen and (max-width: 500px) {
   .home .home-content .home-self .d-downloadimg .downloadimg .img {
     height: 20px;
     width: 20px;
-    transform: scale(0.7);
+    -webkit-transform: scale(0.7);
+            transform: scale(0.7);
   }
 }
+
 .home .home-content .home-self-img {
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   height: 50%;
   min-height: 250px;
-  flex: 20;
+  -webkit-box-flex: 20;
+      -ms-flex: 20;
+          flex: 20;
   border-left: 1px solid #2d2d2d;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
+
 .home .home-content .home-self-img .message {
   position: absolute;
   left: calc(50% - 125px);
@@ -94,6 +129,7 @@
   border-radius: 35px;
   background: url("../../assets/images/svg/Chat.svg") no-repeat center center #ef5350;
 }
+
 .home .home-content .home-self-img .picture {
   overflow: hidden;
   position: relative;
@@ -101,12 +137,14 @@
   width: 250px;
   border-radius: 125px;
 }
+
 .home .home-content .home-self-img .picture .box-pic {
   position: absolute;
   width: 100%;
   -webkit-animation: slider 10s infinite alternate;
           animation: slider 10s infinite alternate;
 }
+
 .home .home-content .home-self-img .picture .box-pic .pic1 {
   float: left;
   height: 250px;
@@ -115,6 +153,7 @@
   background: url("http://47.97.222.87:8088/file/download?fileName=logo.png") no-repeat center center #171717;
   background-size: 250px;
 }
+
 .home .home-content .home-self-img .picture .box-pic .pic2 {
   float: left;
   height: 250px;
@@ -123,6 +162,7 @@
   background: url("http://47.97.222.87:8088/file/download?fileName=logo.png") no-repeat center center #171717;
   background-size: 250px;
 }
+
 .home .home-content .home-self-img .picture .box-pic .pic3 {
   float: left;
   height: 250px;
@@ -131,6 +171,7 @@
   background: url("http://47.97.222.87:8088/file/download?fileName=logo.png") no-repeat center center #171717;
   background-size: 250px;
 }
+
 @-webkit-keyframes slider {
   0% {
     top: 0px;
@@ -151,6 +192,7 @@
     top: -500px;
   }
 }
+
 @keyframes slider {
   0% {
     top: 0px;
@@ -171,27 +213,35 @@
     top: -500px;
   }
 }
+
 .home .home-content .home-slider-point {
-  flex: 1;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
 }
+
 .home .home-content .home-slider-point div {
   height: 8px;
   width: 8px;
   margin: 12px auto;
   background-color: #797979;
 }
+
 .home .home-content .home-slider-point .point1 {
   -webkit-animation: point1 10s infinite alternate;
           animation: point1 10s infinite alternate;
 }
+
 .home .home-content .home-slider-point .point2 {
   -webkit-animation: point2 10s infinite alternate;
           animation: point2 10s infinite alternate;
 }
+
 .home .home-content .home-slider-point .point3 {
   -webkit-animation: point3 10s infinite alternate;
           animation: point3 10s infinite alternate;
 }
+
 @-webkit-keyframes point1 {
   0% {
     background-color: #2196f3;
@@ -206,6 +256,7 @@
     background-color: #797979;
   }
 }
+
 @keyframes point1 {
   0% {
     background-color: #2196f3;
@@ -220,6 +271,7 @@
     background-color: #797979;
   }
 }
+
 @-webkit-keyframes point2 {
   0% {
     background-color: #797979;
@@ -240,6 +292,7 @@
     background-color: #797979;
   }
 }
+
 @keyframes point2 {
   0% {
     background-color: #797979;
@@ -260,6 +313,7 @@
     background-color: #797979;
   }
 }
+
 @-webkit-keyframes point3 {
   0% {
     background-color: #797979;
@@ -274,6 +328,7 @@
     background-color: #2196f3;
   }
 }
+
 @keyframes point3 {
   0% {
     background-color: #797979;
@@ -287,4 +342,5 @@
   100% {
     background-color: #2196f3;
   }
-}/*# sourceMappingURL=home.css.map */
+}
+/*# sourceMappingURL=home.css.map */
