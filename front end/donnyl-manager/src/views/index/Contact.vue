@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2021-09-03 11:37:45
- * @LastEditTime: 2021-09-16 16:46:52
+ * @LastEditTime: 2021-09-28 12:20:51
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /donnyl/src/views/index/Contact.vue
@@ -20,7 +20,7 @@
             <div class="contact-details">
                 <div class="dt-phone">
                     <div>Phone</div>
-                    <div><span>Mob.</span><span>:&nbsp&nbsp&nbsp&nbsp +86 19512102264</span></div>
+                    <div><span>Mobile</span><span>:&nbsp&nbsp&nbsp&nbsp +86 19512102264</span></div>
                     <div><span>QQ</span><span>:&nbsp&nbsp&nbsp&nbsp 1340710624</span></div>
                 </div>
                 <div class="dt-email">

@@ -1,7 +1,7 @@
 <!--
  * @Author: fangsai li
  * @Date: 2021-09-03 11:35:28
- * @LastEditTime: 2021-09-22 18:20:46
+ * @LastEditTime: 2021-09-29 15:33:02
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /donnyl/src/App.vue
@@ -35,11 +35,7 @@
                 <div class="d-self">
                     <div class="d-title">What’s in My Mind</div>
                     <div class="d-content">
-                        We can develop and design anything beyond your ima gination. About
-                        our work, we don’t say anything because our work speaks. For
-                        more, you can ask our clients and they will tell you how much
-                        satisfied they are with our services. So, what are you waiting
-                        for?
+                        This web page is just a practice I did, a summary of my study in software engineering. I can also tell you a little bit about myself.
                     </div>
                 </div>
                 <div class="d-downloadcv">
@@ -60,7 +56,7 @@
                 <ul class="menulist">
                     <li v-for="(item, i) in menulist" key="i" @click="menuclick(item,i)"><span>{{item.name}}</span></li>
                     <li class="l-search"></li>
-                    <li class="l-menu"></li>
+                    <li class="l-menu" @click="dialogVisible = true"></li>
                 </ul>
             </el-header>
             <el-main>
@@ -80,9 +76,18 @@
 
             <div>Watch Times:{{sumwatchtimes}}</div>
             <div>Contact Times:{{sumcontacttimes}}</div>
-            <div style="line-height:100px; color:#ccc; font-size:16px">Click  narrow</div>
+            <div style="line-height:100px; color:#ccc; font-size:16px">Click narrow</div>
         </div>
     </div>
+    <el-dialog v-model="dialogVisible" title="Tips" width="30%" :before-close="handleClose">
+        <span>Do you want to go manager page?</span>
+        <template #footer>
+            <span class="dialog-footer">
+                <el-button @click="dialogVisible = false">Cancel</el-button>
+                <el-button type="primary" @click="openManager()">Confirm</el-button>
+            </span>
+        </template>
+    </el-dialog>
 
 </div>
 </template>
@@ -92,6 +97,8 @@ import axios from "axios"
 export default {
     data() {
         return {
+            //show dialog
+            dialogVisible:false,
             // 鼠标位置
             x: null,
             y: null,
@@ -202,6 +209,10 @@ export default {
     },
 
     methods: {
+        openManager() {
+            this.dialogVisible = false
+            window.location.assign('http://47.97.222.87:1314')
+        },
         changecondition() {
             this.fwindow.style.transition = "all 0.5s"
             var div = document.getElementById('ft-wd-ct');
@@ -215,11 +226,11 @@ export default {
                 // fwindow.style.transform = "all 0.5s"
                 this.fwindow.setAttribute("class", "big-float-window");
                 // div.style.display = "";
-                setTimeout(function(){
+                setTimeout(function () {
                     var div = document.getElementById('ft-wd-ct');
-                    div.style.display = "";},500)
+                    div.style.display = "";
+                }, 500)
                 // this.setTimeout((div)=>{div.style.display = "";},500)
-
 
             }
             setTimeout(() => {
@@ -417,10 +428,10 @@ export default {
 
             ).then((res) => {
                 console.log(res);
-//http://api.ip138.com/ip/
-//"http://ip-api.com/json/" + res.data + "?lang=zh-CN"
-//token=5a6f4e4807db6d3a1788cf88df855139{oid=50045,mid=110096}
-//https://api.ip138.com/ip/?ip=109.249.187.125&datatype=jsonp&token=5a6f4e4807db6d3a1788cf88df855139//
+                //http://api.ip138.com/ip/
+                //"134
+                //token=5a6f4e4807db6d3a1788cf88df855139{oid=50045,mid=110096}
+                //https://api.ip138.com/ip/?ip=109.249.187.125&datatype=jsonp&token=5a6f4e4807db6d3a1788cf88df855139//
                 axios.get("https://api.ip138.com/ip/?ip=" + res.data + "&datatype=jsonp&token=5a6f4e4807db6d3a1788cf88df855139").then((res) => {
                     this.description = JSON.stringify(res.data)
                 }).catch((err) => {
@@ -481,6 +492,21 @@ export default {
 @import url("views/css/nomalize.css");
 @import url("assets/font/merienda/Merienda.css");
 
+.el-dialog{
+    background: #111111;
+    box-shadow: 0 1px 10px #797979;
+}
+
+.dialog-footer span{
+    color: #111111 ;
+}
+
+.el-dialog__header span{
+    color: #ffffff;
+    font-weight: 900;
+}
+/* .el-dialog__body span, */
+
 #float-window {
 
     position: fixed;
@@ -490,7 +516,6 @@ export default {
     z-index: 999;
     font-size: 18px;
     font-weight: 900;
-
 
     /* transition: all .5s; */
 
@@ -502,13 +527,14 @@ export default {
     background-color: #2196f3;
     border-radius: 25px;
 }
+
 .big-float-window::before {
     content: '-';
     text-align: left;
     font-size: 30px;
     font-weight: 900;
     line-height: 50px;
-    
+
 }
 
 .small-float-window {
@@ -516,15 +542,16 @@ export default {
     width: 50px;
     background-color: #2196f3;
     border-radius: 25px;
-    
+
 }
+
 .small-float-window::after {
     content: '+';
     text-align: left;
     font-size: 30px;
     font-weight: 900;
     line-height: 50px;
-    
+
 }
 
 #Icplink {

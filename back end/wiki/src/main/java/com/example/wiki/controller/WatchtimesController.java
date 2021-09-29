@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
+import java.util.Date;
 
 @RestController
 @RequestMapping("/watch")
@@ -52,6 +53,7 @@ public class WatchtimesController {
         }else{
             watchtimes1.setTimes(watchtimes1.getTimes()+1);
             watchtimes1.setDescription(description);
+            watchtimes1.setDate(new Date());
             watchtimesMapper.updateByPrimaryKeySelective(watchtimes1);
             objectCommenResp.setContent(watchtimes1);
             return objectCommenResp;

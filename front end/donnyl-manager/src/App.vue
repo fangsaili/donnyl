@@ -1,7 +1,7 @@
-<  !--
+<!--
  * @Author: your name
  * @Date: 2021-09-15 14:32:48
- * @LastEditTime: 2021-09-22 15:43:02
+ * @LastEditTime: 2021-09-29 15:55:01
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /front end/donnyl-manager/src/App.vue
@@ -34,11 +34,7 @@
                 <div class="d-self">
                     <div class="d-title">What’s in My Mind</div>
                     <div class="d-content">
-                        We can develop and design anything beyond your ima gination. About
-                        our work, we don’t say anything because our work speaks. For
-                        more, you can ask our clients and they will tell you how much
-                        satisfied they are with our services. So, what are you waiting
-                        for?
+                        This web page is just a practice I did, a summary of my study in software engineering. I can also tell you a little bit about myself.
                     </div>
                 </div>
                 <div class="d-downloadcv">
@@ -90,6 +86,7 @@
 
                 <el-button type="primary" @click="login()">Confirm</el-button>
                 <el-button type="primary" @click="find()">Find</el-button>
+                <el-button type="primary" @click="dialogVisible = true">Back to visitor page</el-button>
             </div>
         </div>
     </el-drawer>
@@ -101,6 +98,15 @@
             <div style="line-height:100px; color:#ccc; font-size:16px">Click  narrow</div>
         </div>
     </div>
+    <el-dialog v-model="dialogVisible" title="Tips" width="30%" :before-close="handleClose">
+        <span>Do you want to go visitor page?</span>
+        <template #footer>
+            <span class="dialog-footer">
+                <el-button @click="dialogVisible = false">Cancel</el-button>
+                <el-button type="primary" @click="openVisitor()">Confirm</el-button>
+            </span>
+        </template>
+    </el-dialog>
 
 </div>
 </template>
@@ -124,6 +130,7 @@ import { h } from '@vue/runtime-core';
 export default {
     data() {
         return {
+            dialogVisible:false,
             // 鼠标位置
             x: null,
             y: null,
@@ -291,6 +298,9 @@ export default {
     },
 
     methods: {
+        openVisitor(){
+            window.location.assign('http://47.97.222.87')
+        },
         changecondition() {
             this.fwindow.style.transition = "all 0.5s"
              var div = document.getElementById('ft-wd-ct');
@@ -565,6 +575,39 @@ export default {
 @import url("assets/css/menu.css");
 @import url("views/css/nomalize.css");
 @import url("assets/font/merienda/Merienda.css");
+
+
+
+.el-input{
+    padding-right: 20%;
+
+}
+
+.el-input__inner{
+    -webkit-user-select:auto;
+}
+.el-form-item__label{
+    color: #ffffff;
+}
+
+.el-drawer{
+    background-color: transparent;
+}
+
+.el-dialog{
+    background: #111111;
+    box-shadow: 0 1px 10px #797979;
+}
+
+.dialog-footer span{
+    color: #111111 ;
+}
+
+.el-dialog__header span{
+    color: #ffffff;
+    font-weight: 900;
+}
+/* .el-dialog__body span, */
 
 
 #float-window {

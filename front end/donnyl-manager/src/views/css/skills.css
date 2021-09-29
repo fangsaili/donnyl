@@ -2,13 +2,11 @@
   padding: 2vh 2vw 0 4vw;
   line-height: 50px;
 }
-
 .skills .skills-title {
   margin: 10px 0;
   text-align: left;
   line-height: 46px;
 }
-
 .skills .skills-title .skills-img {
   display: inline-block;
   height: 46px;
@@ -16,14 +14,12 @@
   vertical-align: middle;
   background: url("../../assets/images/svg/skills.svg") no-repeat;
 }
-
 .skills .skills-title .skills-skills {
   line-height: 1;
   height: 34px;
   font-size: 34px;
   font-weight: 900;
 }
-
 .skills .skills-title-content {
   margin: 20px 0;
   line-height: 20px;
@@ -32,16 +28,13 @@
   font-size: 12px;
   color: #797979;
 }
-
 .skills .professional-skills {
-  -webkit-box-shadow: 0px 0px 100px rgba(0, 0, 0, 0.3);
-          box-shadow: 0px 0px 100px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 0px 100px rgba(0, 0, 0, 0.3);
   overflow: hidden;
   margin: 30px 0;
   padding: 50px;
   background-color: #2c2c2c;
 }
-
 .skills .professional-skills .skill-head {
   width: 33%;
   margin-bottom: 50px;
@@ -51,9 +44,7 @@
   font-size: 18px;
   font-weight: 700;
 }
-
 .skills .professional-skills .skill-content {
   width: 33%;
   float: left;
-}
-/*# sourceMappingURL=skills.css.map */
+}/*# sourceMappingURL=skills.css.map */

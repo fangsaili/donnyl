@@ -1,14 +1,15 @@
 # donnyl
- personal website
- Address:  http://47.97.222.87
- personal manager website
- Address:  http://47.97.222.87:1314
+ personal website  Address:  http://47.97.222.87
+ 
+ personal manager website  Address:  http://47.97.222.87:1314
+ 
  personal domain name：donnyl.top
 
 
 
 1. The server
 Alibaba cloud server
+
 Address:  http://47.97.222.87
 
 2. System Mirror
@@ -32,11 +33,6 @@ IntelliJ Idea
 Framework: Vue3.0
 
 
-
-
-
-
-
-
 # Server End
 Framework： Springboot
+Database: Mysql 8.0, Redis
