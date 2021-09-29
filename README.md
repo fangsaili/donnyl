@@ -1,6 +1,8 @@
 # donnyl
- personal web
- Address:  http://47.97.222.87:88
+ personal website
+ Address:  http://47.97.222.87
+ personal manager website
+ Address:  http://47.97.222.87:1314
  personal domain name：donnyl.top
 
 
