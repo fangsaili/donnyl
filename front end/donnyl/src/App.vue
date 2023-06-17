@@ -1,7 +1,7 @@
 <!--
  * @Author: fangsai li
  * @Date: 2021-09-03 11:35:28
- * @LastEditTime: 2021-09-29 15:33:02
+ * @LastEditTime: 2021-09-29 17:59:35
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /donnyl/src/App.vue
@@ -465,7 +465,7 @@ export default {
 
         downloadcv() {
             let a = document.createElement('a')
-            a.href = "http://47.97.222.87:8088/file/download?fileName=李方赛的简历.docx"
+            a.href = "http://47.97.222.87:8088/file/download?fileName=LifangsaiCV.docx"
             a.click();
 
         },
